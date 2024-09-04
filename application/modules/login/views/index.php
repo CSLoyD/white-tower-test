@@ -8,7 +8,7 @@
         <form id="login-form" method="POST">
             <div class="mb-3">
                 <label for="">Email</label>
-                <input type="text" name="username" class="form-control" placeholder="Email" required>
+                <input type="email" name="username" class="form-control" placeholder="Email" required>
                 <p class="err"></p>
             </div>
             <div class="mb-3">
@@ -16,7 +16,7 @@
                 <input type="password" name="password" class="form-control" placeholder="Password" required>
                 <p class="err"></p>
             </div>
-            <button type="submit" class="btn btn-primary btn-signup">Login</button>
+            <button type="submit" class="btn btn-primary btn-login">Login</button>
         </form>
     </div>
 </div>

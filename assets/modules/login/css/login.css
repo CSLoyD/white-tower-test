@@ -20,7 +20,7 @@
     margin-bottom: 20px;
 }
 
-.btn-signup {
+.btn-signup, .btn-login {
     border-radius: 30px;
     padding: 10px 20px;
     width: 100%;
