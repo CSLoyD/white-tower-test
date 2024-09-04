@@ -36,7 +36,7 @@
 - you can modify .htaccess and index.php $base_url if you put this in a folder
 Example:
     - .htaccess
-    - RewriteBase /white-tower-test
+    - RewriteBase /white-tower-test/
     - index.php
-    - (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/white-tower-test'; 
+    - (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/white-tower-test/'; 
 
