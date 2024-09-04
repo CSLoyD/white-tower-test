@@ -35,8 +35,6 @@
 - If you don't want to use gmail as the SMTP or add the credentials it will still read and use the native php mail() function but you need to put this on a server for the email to work
 - you can modify .htaccess and index.php $base_url if you put this in a folder
 Example:
-    - .htaccess
-    - RewriteBase /white-tower-test/
-    - index.php
-    - (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/white-tower-test/'; 
+    - .htaccess => RewriteBase /white-tower-test/
+    - index.php => (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/white-tower-test/'; 
 
