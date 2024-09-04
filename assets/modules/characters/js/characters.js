@@ -25,6 +25,7 @@ $(document).ready(function(){
 
    $(document).on('click', '.btn-save-character', function(e) {
         e.preventDefault();
+        $(this).html('Saving...');
         let character_id = $(this).attr('data-charid');
         let formData = new FormData();
         formData.append('character_id',character_id);
@@ -39,6 +40,7 @@ $(document).ready(function(){
 
    $(document).on('click', '.btn-delete-character', function(e) {
     e.preventDefault();
+    $(this).html('Deleting...');
     let save_id = $(this).attr('data-saveid');
     let formData = new FormData();
     formData.append('save_id',save_id);

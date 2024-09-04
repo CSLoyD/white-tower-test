@@ -116,27 +116,31 @@ class Characters extends MY_Controller {
 					</div>
 				";
 			}
-		}
 
-		if($currentPage != 1) {
-			$pagination .= "
-			<li class='page-item'>
-				<a class='page-link' data-page='{$previousPage}' href='javascript:void(0);' aria-label='Previous'>
-					<span aria-hidden='true'>&laquo;</span>
-				</a>
-			</li>";
-		}
-		
-		for ($i = 1; $i <= $totalPages; $i++) {
-			$pagination .= "<li class='page-item'><a class='page-link' data-page='".$i."' href='javascript:void(0)'".($i == $currentPage ? ' class="active"' : '').">".$i."</a></li>";
-		}
+			if($currentPage != 1) {
+				$pagination .= "
+				<li class='page-item'>
+					<a class='page-link' data-page='{$previousPage}' href='javascript:void(0);' aria-label='Previous'>
+						<span aria-hidden='true'>&laquo;</span>
+					</a>
+				</li>";
+			}
+			
+			for ($i = 1; $i <= $totalPages; $i++) {
+				$pagination .= "<li class='page-item'><a class='page-link' data-page='".$i."' href='javascript:void(0)'".($i == $currentPage ? ' class="active"' : '').">".$i."</a></li>";
+			}
 
-		if($currentPage != $totalPages) {
-			$pagination .= "<li class='page-item'>
-				<a class='page-link' data-page='{$nextPage}' href='javascript:void(0);' aria-label='Next'>
-					<span aria-hidden='true'>&raquo;</span>
-				</a>
-			</li>";
+			if($currentPage != $totalPages) {
+				$pagination .= "<li class='page-item'>
+					<a class='page-link' data-page='{$nextPage}' href='javascript:void(0);' aria-label='Next'>
+						<span aria-hidden='true'>&raquo;</span>
+					</a>
+				</li>";
+			}
+		} else {
+			$cards .= "
+			<p class='text-center'>No Saved Character(s)</p>
+			";
 		}
 
 		$respond['cards'] 		= $cards;
