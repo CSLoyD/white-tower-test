@@ -26,7 +26,8 @@ $config['modules_locations'] = array(
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/white-tower-test/';
+global $base_url;
+$config['base_url'] = $base_url;
 /*
 |--------------------------------------------------------------------------
 | Index File
