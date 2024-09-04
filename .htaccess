@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /white-tower-test/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+<FilesMatch "^\.env">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

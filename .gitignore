@@ -1,0 +1,8 @@
+# Vendor files
+vendor
+vendor/*
+
+# Others
+.env
+composer.lock
+**/.DS_Store
