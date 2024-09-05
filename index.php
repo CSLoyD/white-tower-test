@@ -1,6 +1,6 @@
 <?php
 
-$isProduction = false;
+$isProduction = true;
 $base_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/white-tower-test/';
 
 /**

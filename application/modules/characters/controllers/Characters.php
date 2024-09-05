@@ -236,6 +236,8 @@ class Characters extends MY_Controller {
 		
 		$curl = curl_init($apiUrl);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+		// curl_setopt($curl, CURLOPT_POST, 0);
+		// curl_setopt($curl,CURLOPT_POSTFIELDS,$params);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($curl);
 		curl_close($curl);
