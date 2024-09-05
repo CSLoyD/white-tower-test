@@ -6,31 +6,35 @@ $(document).ready(function() {
         e.preventDefault();
 
         var formData = new FormData($(this)[0]);
-        
+        $('.btn-login').html('Logging In...');
         var sendAjaxVar = sendAjax({url: base_url + '/login/checkLogin',data: formData});
         if(sendAjaxVar.status == 'success') {
             clearError()
             window.location.href = base_url + 'characters'
+            $('.btn-login').html('Login');
         } else {
             clearError()
             $.each(sendAjaxVar, function (key, value) {
                 $('input[name="' + value.name + '"]').next('.err').html(value.msg);
             })
+            $('.btn-login').html('Login');
         }  
     })
 
     $('#registration-form').submit(function(e){
         e.preventDefault();
-
+        $('.btn-sign-up').html('Signing Up...');
         var formData = new FormData($(this)[0]);
         
         var sendAjaxVar = sendAjax({url: base_url + 'login/addUser',data: formData});
         if(sendAjaxVar.status == 'success') {
             clearError()
             window.location.href = base_url + 'thank-you';
+            $('.btn-sign-up').html('Sign Up');
         } else {
             if(sendAjaxVar.status == 'error_confirm_pass') {
                 $('input[name="c_password"]').next('.err').html(sendAjaxVar.msg);
+                $('.btn-sign-up').html('Sign Up');
             }
         }  
     })
