@@ -1,7 +1,4 @@
-# 
-
-
-#Table of Contents
+# Table of Contents
 1. [Features Overview](#Features)
 2. [Instructions](#Instructions)
 
