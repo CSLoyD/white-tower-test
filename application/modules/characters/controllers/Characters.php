@@ -26,9 +26,10 @@ class Characters extends MY_Controller {
 		$cards = '';
 		$pagination = '';
 
-		$next = ($currentPage != 1) ? preg_replace('/https:\/\/swapi\.dev\/api\/people\/\?page=(\d+)/','$1',$list['next']) : "";
-		$prev = ($currentPage != $totalPages) ? preg_replace('/https:\/\/swapi\.dev\/api\/people\/\?page=(\d+)/','$1',$list['previous']) : "";
+		$next = ($currentPage < $totalPages) ? preg_replace('/https:\/\/swapi\.dev\/api\/people\/\?page=(\d+)/','$1',$list['next']) : "";
+		$prev = ($currentPage > 1) ? preg_replace('/https:\/\/swapi\.dev\/api\/people\/\?page=(\d+)/','$1',$list['previous']) : "";
 
+		
 		if($list && is_array($list['results'])) {
 			foreach( $list['results'] as $key => $value ){
 				$id = preg_replace('/https:\/\/swapi\.dev\/api\/people\/(\d+)\/$/','$1',$value['url']);
@@ -99,6 +100,7 @@ class Characters extends MY_Controller {
 		$hasPreviousPage = $currentPage > 1;
 		$nextPage = $hasNextPage ? $currentPage + 1 : null;
 		$previousPage = $hasPreviousPage ? $currentPage - 1 : null;
+		
 
 		if($fetchData) {
 			foreach( $fetchData as $key => $value ){
